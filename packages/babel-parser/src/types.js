@@ -141,6 +141,57 @@ export type Program = NodeBase & {
   interpreter: InterpreterDirective | null,
 };
 
+export type MatchExpression = NodeBase & {
+  type: "MatchExpression",
+  expression: Expression,
+  clauses: MatchExpressionClauses,
+}
+
+export type MatchExpressionClauses = $ReadOnlyArray<MatchExpressionClause>
+
+export type MatchExpressionClause = NodeBase & {
+  type: "MatchExpressionClause",
+  pattern: MatchExpressionPattern,
+  value: Expression,
+}
+
+export type BasicMatchExpressionPattern = 
+  ObjectMatchPattern
+  | ArrayMatchPattern
+  | LiteralMatchPattern
+  | IdentifierMatchPattern
+
+export type MatchExpressionPattern = 
+  BasicMatchExpressionPattern
+  | "else"
+
+export type ObjectMatchPattern = NodeBase & {
+  type: "ObjectMatchPattern",
+  children: $ReadOnlyArray<ObjectPropertyMatchPattern>,
+  restIdentifier: IdentifierMatchPattern | null,
+}
+
+export type ObjectPropertyMatchPattern = NodeBase & {
+  type: "ObjectPropertyMatchPattern",
+  key: IdentifierMatchPattern,
+  value: BasicMatchExpressionPattern | null,
+}
+
+export type ArrayMatchPattern = NodeBase & {
+  type: "ArrayMatchPattern",
+  children: $ReadOnlyArray<BasicMatchExpressionPattern>,
+  hasRest: boolean,
+}
+
+export type LiteralMatchPattern = 
+  | NumericLiteral
+  | BigIntLiteral
+  | StringLiteral
+  | NullLiteral
+  | BooleanLiteral
+
+export type IdentifierMatchPattern = Identifier
+
 // Functions
 
 export type Function =
