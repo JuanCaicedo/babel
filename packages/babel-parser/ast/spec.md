@@ -79,6 +79,11 @@ These are the core @babel/parser (babylon) AST node types.
   - [NewExpression](#newexpression)
   - [SequenceExpression](#sequenceexpression)
   - [DoExpression](#doexpression)
+  - [MatchExpression](#matchexpression)
+    - [MatchExpressionClause](#matchexpressionclause)
+      - [ObjectMatchPattern](#objectmatchpattern)
+        - [ObjectPropertyMatchPattern](#objectpropertymatchpattern)
+      - [ArrayMatchPattern](#arraymatchpattern)
 - [Template Literals](#template-literals)
   - [TemplateLiteral](#templateliteral)
   - [TaggedTemplateExpression](#taggedtemplateexpression)
@@ -942,6 +947,57 @@ A sequence expression, i.e., a comma-separated sequence of expressions.
 interface DoExpression <: Expression {
   type: "DoExpression";
   body: BlockStatement
+}
+```
+
+## MatchExpression
+
+```js
+interface MatchExpression <: Expression {
+  type: "MatchExpression";
+  expression: Expression;
+  clauses: [ MatchExpressionClause ]
+}
+```
+
+## MatchExpressionClause
+
+```js
+interface MatchExpressionClause <: Expression {
+  type: "MatchExpressionClause";
+  pattern: ObjectMatchPattern | ArrayMatchPattern | LiteralMatchPattern | IdentifierMatchPattern | "else";
+  body: Expression;
+  expression: boolean
+}
+```
+
+## ObjectMatchPattern
+
+```js
+interface ObjectMatchPattern <: Expression {
+  type: "ObjectMatchPattern";
+  children: [ ObjectPropertyMatchPattern ];
+  restIdentifier: Identifier | null
+}
+```
+
+## ObjectPropertyMatchPattern
+
+```js
+interface ObjectPropertyMatchPattern <: Expression {
+  type: "ObjectPropertyMatchPattern";
+  key: Identifier;
+  value: ObjectMatchPattern | ArrayMatchPattern | LiteralMatchPattern | Identifier | null
+}
+```
+
+## ArrayMatchPattern
+
+```js
+interface ArrayMatchPattern <: Expression {
+  type: "ArrayMatchPattern";
+  children: [ ObjectMatchPattern | ArrayMatchPattern | LiteralMatchPattern | Identifier ];
+  hasRest: boolean
 }
 ```
 
