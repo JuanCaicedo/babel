@@ -152,7 +152,8 @@ export type MatchExpressionClauses = $ReadOnlyArray<MatchExpressionClause>
 export type MatchExpressionClause = NodeBase & {
   type: "MatchExpressionClause",
   pattern: MatchExpressionPattern,
-  value: Expression,
+  body: Expression,
+  expression: boolean,
 }
 
 export type BasicMatchExpressionPattern = 
