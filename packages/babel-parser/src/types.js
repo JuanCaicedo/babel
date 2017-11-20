@@ -180,6 +180,7 @@ export type ArrayMatchPattern = NodeBase & {
   type: "ArrayMatchPattern",
   children: $ReadOnlyArray<BasicMatchExpressionPattern>,
   hasRest: boolean,
+  restIdentifier: IdentifierMatchPattern | null,
 };
 
 export type LiteralMatchPattern =

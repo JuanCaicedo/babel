@@ -135,6 +135,13 @@ defineType("Import", {
   aliases: ["Expression"],
 });
 
+defineType("ObjectMatchPattern", {
+  visitor: ["children", "restIdentifier"],
+  fields: {
+    // todo
+  },
+});
+
 defineType("Decorator", {
   visitor: ["expression"],
   fields: {
@@ -147,6 +154,10 @@ defineType("Decorator", {
 defineType("DoExpression", {
   visitor: ["body"],
   aliases: ["Expression"],
+});
+
+defineType("ArrayMatchPattern", {
+  visitor: ["children", "restIdentifier"],
   fields: {
     body: {
       validate: assertNodeType("BlockStatement"),
