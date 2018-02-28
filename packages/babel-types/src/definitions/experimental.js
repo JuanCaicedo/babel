@@ -135,6 +135,26 @@ defineType("Import", {
   aliases: ["Expression"],
 });
 
+defineType("MatchExpression", {
+  visitor: ["clauses", "expression"],
+  aliases: ["Expression"],
+  fields: {
+    clauses: {
+      validate: chain(
+        assertValueType("array"),
+        assertEach(assertNodeType("MatchExpressionClause")),
+      ),
+    },
+  },
+});
+
+defineType("MatchExpressionClause", {
+  visitor: ["pattern", "body", "expression"],
+  fields: {
+    // todo
+  },
+});
+
 defineType("ObjectMatchPattern", {
   visitor: ["children", "restIdentifier"],
   fields: {
