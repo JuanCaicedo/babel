@@ -156,7 +156,7 @@ defineType("MatchClause", {
 });
 
 defineType("MatchGuard", {
-  visitor: ["expression"],
+  visitor: ["body"],
   fields: {
     // todo
   },
