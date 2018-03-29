@@ -696,6 +696,33 @@ export function assertDecorator(node: Object, opts?: Object = {}): void {
 export function assertDoExpression(node: Object, opts?: Object = {}): void {
   assert("DoExpression", node, opts);
 }
+export function assertMatchExpression(node: Object, opts?: Object = {}): void {
+  assert("MatchExpression", node, opts);
+}
+export function assertMatchClause(node: Object, opts?: Object = {}): void {
+  assert("MatchClause", node, opts);
+}
+export function assertMatchGuard(node: Object, opts?: Object = {}): void {
+  assert("MatchGuard", node, opts);
+}
+export function assertObjectMatchPattern(
+  node: Object,
+  opts?: Object = {},
+): void {
+  assert("ObjectMatchPattern", node, opts);
+}
+export function assertObjectPropertyMatchPattern(
+  node: Object,
+  opts?: Object = {},
+): void {
+  assert("ObjectPropertyMatchPattern", node, opts);
+}
+export function assertArrayMatchPattern(
+  node: Object,
+  opts?: Object = {},
+): void {
+  assert("ArrayMatchPattern", node, opts);
+}
 export function assertExportDefaultSpecifier(
   node: Object,
   opts?: Object = {},

@@ -2201,6 +2201,27 @@ export function isDoExpression(node: Object, opts?: Object): boolean {
 
   return false;
 }
+export function isMatchExpression(node: Object, opts?: Object): boolean {
+  return is("MatchExpression", node, opts);
+}
+export function isMatchClause(node: Object, opts?: Object): boolean {
+  return is("MatchClause", node, opts);
+}
+export function isMatchGuard(node: Object, opts?: Object): boolean {
+  return is("MatchGuard", node, opts);
+}
+export function isObjectMatchPattern(node: Object, opts?: Object): boolean {
+  return is("ObjectMatchPattern", node, opts);
+}
+export function isObjectPropertyMatchPattern(
+  node: Object,
+  opts?: Object,
+): boolean {
+  return is("ObjectPropertyMatchPattern", node, opts);
+}
+export function isArrayMatchPattern(node: Object, opts?: Object): boolean {
+  return is("ArrayMatchPattern", node, opts);
+}
 export function isExportDefaultSpecifier(node: Object, opts?: Object): boolean {
   if (!node) return false;
 
