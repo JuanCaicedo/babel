@@ -591,7 +591,7 @@ export default class ExpressionParser extends LValParser {
         }
         break;
       } else {
-        const pattern = this.parseObjectPropertyPattern();
+        const pattern = this.parseMatchProperty();
         node.children.push(pattern);
       }
 
@@ -607,7 +607,7 @@ export default class ExpressionParser extends LValParser {
     return this.finishNode(node, "ObjectMatchPattern");
   }
 
-  parseObjectPropertyPattern(): N.ObjectPropertyMatchPattern {
+  parseMatchProperty(): N.MatchProperty {
     const node = this.startNode();
 
     node.key = this.parseIdentifier();
@@ -621,7 +621,7 @@ export default class ExpressionParser extends LValParser {
       }
     }
 
-    return this.finishNode(node, "ObjectPropertyMatchPattern");
+    return this.finishNode(node, "MatchProperty");
   }
 
   // '[' ( pattern ',' )+ pattern? ']'

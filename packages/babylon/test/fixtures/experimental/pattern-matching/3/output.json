@@ -173,7 +173,7 @@
                       },
                       "children": [
                         {
-                          "type": "ObjectPropertyMatchPattern",
+                          "type": "MatchProperty",
                           "start": 44,
                           "end": 45,
                           "loc": {
@@ -206,7 +206,7 @@
                           "value": null
                         },
                         {
-                          "type": "ObjectPropertyMatchPattern",
+                          "type": "MatchProperty",
                           "start": 47,
                           "end": 48,
                           "loc": {
@@ -239,7 +239,7 @@
                           "value": null
                         },
                         {
-                          "type": "ObjectPropertyMatchPattern",
+                          "type": "MatchProperty",
                           "start": 50,
                           "end": 51,
                           "loc": {
@@ -564,7 +564,7 @@
                       },
                       "children": [
                         {
-                          "type": "ObjectPropertyMatchPattern",
+                          "type": "MatchProperty",
                           "start": 98,
                           "end": 99,
                           "loc": {
@@ -597,7 +597,7 @@
                           "value": null
                         },
                         {
-                          "type": "ObjectPropertyMatchPattern",
+                          "type": "MatchProperty",
                           "start": 101,
                           "end": 102,
                           "loc": {
