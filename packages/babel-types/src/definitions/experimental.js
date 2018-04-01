@@ -152,7 +152,7 @@ defineType("MatchClause", {
   visitor: ["pattern", "body", "guard", "initializer"],
   fields: {
     pattern: {
-      validate: assertValueType(
+      validate: assertNodeType(
         "ObjectMatchPattern",
         "ArrayMatchPattern",
         "Identifier",
@@ -231,7 +231,7 @@ defineType("MatchProperty", {
       })(),
     },
     value: {
-      validate: assertValueType(
+      validate: assertNodeType(
         "ObjectMatchPattern",
         "ArrayMatchPattern",
         "Identifier",
