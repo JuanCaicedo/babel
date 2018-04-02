@@ -203,7 +203,8 @@
                             },
                             "name": "x"
                           },
-                          "value": null
+                          "value": null,
+                          "initializer": null
                         },
                         {
                           "type": "MatchProperty",
@@ -236,7 +237,8 @@
                             },
                             "name": "y"
                           },
-                          "value": null
+                          "value": null,
+                          "initializer": null
                         },
                         {
                           "type": "MatchProperty",
@@ -269,7 +271,8 @@
                             },
                             "name": "z"
                           },
-                          "value": null
+                          "value": null,
+                          "initializer": null
                         }
                       ],
                       "restIdentifier": null
@@ -594,7 +597,8 @@
                             },
                             "name": "x"
                           },
-                          "value": null
+                          "value": null,
+                          "initializer": null
                         },
                         {
                           "type": "MatchProperty",
@@ -627,7 +631,8 @@
                             },
                             "name": "y"
                           },
-                          "value": null
+                          "value": null,
+                          "initializer": null
                         }
                       ],
                       "restIdentifier": null

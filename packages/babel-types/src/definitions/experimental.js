@@ -209,7 +209,7 @@ defineType("MatchRestProperty", {
 });
 
 defineType("MatchProperty", {
-  visitor: ["key", "value", "computed"],
+  visitor: ["key", "value", "initializer", "computed"],
   fields: {
     computed: {
       validate: assertValueType("boolean"),
